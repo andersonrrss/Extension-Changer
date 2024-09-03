@@ -43,6 +43,12 @@ def rename(extension, new_extension, source_dir="./", target_dir=None):
         file_path = os.path.join(source_dir, item) # Caminho completo do arquivo
         # Checa se o arquivo termina com a extensão expecificada
         if os.path.isfile(file_path) and file_path.endswith(extension):
+            # Retira os "." das extensões mencionadas para evitar bugs
+            if extension.startswith("."):
+                extension = extension[:0] + extension[0+1:]
+            if new_extension.startswith("."):
+                new_extension = new_extension[:0] + new_extension[0+1:]
+
             try:
                 base, _ = os.path.splitext(item)
                 new_path = os.path.join(target_dir, f"{base}.{new_extension}") # Muda a extensão do arquivo
