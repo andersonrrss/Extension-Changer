@@ -5,4 +5,4 @@ O código itera sobre um diretório e encontra os arquivos com a extensão expec
 
 ## Uso
 
-<extensão antiga> <extensão nova> <caminho da pasta de entrada(opcional)> <caminho da pasta de saída(opcional)>
+`python changeExtensions.py` <extensão antiga> <extensão nova> <caminho da pasta de entrada(opcional)> <caminho da pasta de saída(opcional)>
